@@ -1,14 +1,12 @@
 import React from 'react';
 // Layout Components
+// Correct these to use Capital Letters for the folders
 import Header from './components/Layout/Header';
 import Footer from './components/Layout/Footer';
-import Button from './components/UI/Button';
-
-// Portfolio Sections
 import About from './components/Portfolio/About';
 import Education from './components/Portfolio/Education';
 import Skills from './components/Portfolio/Skills';
-import Projects from './components/Portfolio/Project'; 
+import Projects from './components/Portfolio/Project';
 import Achievements from './components/Portfolio/Achievement';
 
 // Assets
