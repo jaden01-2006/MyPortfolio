@@ -1,16 +1,18 @@
 import React from 'react';
 // Layout Components
-// Correct these to use Capital Letters for the folders
 import Header from './components/Layout/Header';
 import Footer from './components/Layout/Footer';
+import Button from './components/UI/Button';
+
+// Portfolio Sections
 import About from './components/Portfolio/About';
 import Education from './components/Portfolio/Education';
 import Skills from './components/Portfolio/Skills';
-import Projects from './components/Portfolio/Project';
+import Projects from './components/Portfolio/Project'; 
 import Achievements from './components/Portfolio/Achievement';
 
-// Assets
-import heroImage from './assets/hero.png'; 
+// Add this line at the top of App.jsx
+import heroImage from './assets/hero.jpg';
 
 // Unified 'Let's Connect' section
 import Card from './components/UI/Card';
@@ -28,6 +30,7 @@ const App = () => {
       <Header />
 
       <main className="container mx-auto py-12 px-0">
+
         <section id="home" className="flex flex-col md:flex-row items-center justify-between gap-12 py-20 mb-12 max-w-[1400px] mx-auto px-10">
           <div className="flex-1 text-center md:text-left">
             <h1 className="text-7xl font-extrabold text-portfolio-text m-0 mb-3 leading-tight">
@@ -68,13 +71,18 @@ const App = () => {
             <span className="absolute right-[-20px] top-[40%] w-4 h-4 rounded-full bg-portfolio-pink opacity-40 z-20 decor-fade"></span>
           </div>
         </section>
-
         <About />
 
-        <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 px-10">
-          <Education />
-          <Skills />
-        </div>
+<div className="max-w-[1400px] mx-auto px-10 mb-8">
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+    <div className="flex flex-col">
+       <Education />
+    </div>
+    <div className="flex flex-col">
+       <Skills />
+    </div>
+  </div>
+</div>
 
         <Projects />
         <Achievements />
@@ -82,6 +90,7 @@ const App = () => {
         {/* Connected Let's Connect Section */}
         <section id="contact">
           <Card className='mt-0'>
+            {/* The inner constraint is re-applied here for the content */}
             <div className="flex flex-col xl:grid xl:grid-cols-4 gap-8 items-center text-center xl:text-left max-w-[1400px] mx-auto">
               
               <div className="xl:col-span-1">

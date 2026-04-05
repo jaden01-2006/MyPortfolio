@@ -13,7 +13,7 @@ const Projects = () => {
       <Card>
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-2xl font-bold text-gray-800 flex items-center gap-2">📂 Projects</h2>
-          <a href="#" className="text-[#F06292] font-semibold text-sm hover:underline">View More on GitHub →</a>
+          <a href="https://github.com/jaden01-2006" className="text-[#F06292] font-semibold text-sm hover:underline">View More on GitHub →</a>
         </div>
         <div className="grid md:grid-cols-3 gap-6">
           {data.map((p, i) => (

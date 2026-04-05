@@ -1,24 +1,26 @@
-import React from 'react';
-import Card from '../UI/Card';
-
 const Skills = () => {
-  const skillGroups = [
-    { title: 'Frontend', skills: ['HTML', 'CSS', 'JavaScript', 'React (Basic)'] },
-    { title: 'Backend', skills: ['Node.js', 'Express (Basic)'] },
-    { title: 'Tools', skills: ['Git', 'GitHub', 'Figma', 'VS Code'] }
+  const skillCategories = [
+    { title: "Frontend", skills: ["HTML", "CSS", "JavaScript", "React (Basic)"] },
+    { title: "Backend", skills: ["Node.js", "Express (Basic)", "PHP", "SQL"] },
+    { title: "Tools", skills: ["Git", "GitHub", "Figma", "VS Code", "XAMPP"] }
   ];
 
   return (
-    <Card title="Skills" icon="💻">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {skillGroups.map(group => (
-          <div key={group.title}>
-            <p className="text-base font-bold text-portfolio-text-muted mb-4 uppercase tracking-wider">
-              {group.title}
-            </p>
-            <div className="flex flex-wrap gap-2.5">
-              {group.skills.map(skill => (
-                <span key={skill} className="bg-white border border-gray-200 text-portfolio-text px-3.5 py-1.5 rounded-full text-sm font-medium">
+    <div className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 h-full">
+      <div className="flex items-center gap-3 mb-8">
+        <span className="text-3xl">💻</span>
+        <h2 className="text-3xl font-extrabold text-portfolio-text m-0">Technical Skills</h2>
+      </div>
+
+      <div className="space-y-8">
+        {skillCategories.map((category) => (
+          <div key={category.title}>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-portfolio-pink mb-4">
+              {category.title}
+            </h3>
+            <div className="flex flex-wrap gap-2">
+              {category.skills.map((skill) => (
+                <span key={skill} className="px-4 py-2 bg-gray-50 border border-gray-100 rounded-xl text-sm font-medium text-gray-700 hover:border-portfolio-pink/30 hover:bg-white transition-all shadow-sm">
                   {skill}
                 </span>
               ))}
@@ -26,8 +28,7 @@ const Skills = () => {
           </div>
         ))}
       </div>
-    </Card>
+    </div>
   );
 };
-
 export default Skills;
