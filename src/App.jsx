@@ -1,15 +1,15 @@
 import React from 'react';
 // Layout Components
-import Header from './components/layout/Header';
-import Footer from './components/layout/Footer';
+import Header from './components/Layout/Header';
+import Footer from './components/Layout/Footer';
 import Button from './components/UI/Button';
 
 // Portfolio Sections
-import About from './components/portfolio/About';
-import Education from './components/portfolio/Education';
-import Skills from './components/portfolio/Skills';
-import Projects from './components/portfolio/Project'; 
-import Achievements from './components/portfolio/Achievement';
+import About from './components/Portfolio/About';
+import Education from './components/Portfolio/Education';
+import Skills from './components/Portfolio/Skills';
+import Projects from './components/Portfolio/Project'; 
+import Achievements from './components/Portfolio/Achievement';
 
 // Assets
 import heroImage from './assets/hero.png'; 
@@ -29,13 +29,7 @@ const App = () => {
     <div className="bg-portfolio-bg text-portfolio-text min-h-screen font-sans selection:bg-portfolio-pink-light selection:text-portfolio-pink-dark selection:text-portfolio-pink-dark">
       <Header />
 
-      {/* --- CHANGE HERE --- */}
-      {/* We are removing max-w-[1000px] and p-6 from the main container. */}
-      {/* This allows our frames to stretch to the edges. */}
-      {/* py-12 keeps the top and bottom spacing. */}
       <main className="container mx-auto py-12 px-0">
-        
-        {/* We need to re-add inner constraint for the Hero section text to keep it from hitting the screen edge */}
         <section id="home" className="flex flex-col md:flex-row items-center justify-between gap-12 py-20 mb-12 max-w-[1400px] mx-auto px-10">
           <div className="flex-1 text-center md:text-left">
             <h1 className="text-7xl font-extrabold text-portfolio-text m-0 mb-3 leading-tight">
@@ -77,12 +71,8 @@ const App = () => {
           </div>
         </section>
 
-        {/* --- SECTION CONTAINERS NOW STRETCH --- */}
-        {/* We put each section inside a max-width container IF it needs it,  */}
-        {/* but the 'About' section for example, will use the new, wider Card */}
         <About />
 
-        {/* This grid needs an internal constraint to keep the boxes in the middle of the screen */}
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 px-10">
           <Education />
           <Skills />
@@ -94,7 +84,6 @@ const App = () => {
         {/* Connected Let's Connect Section */}
         <section id="contact">
           <Card className='mt-0'>
-            {/* The inner constraint is re-applied here for the content */}
             <div className="flex flex-col xl:grid xl:grid-cols-4 gap-8 items-center text-center xl:text-left max-w-[1400px] mx-auto">
               
               <div className="xl:col-span-1">
