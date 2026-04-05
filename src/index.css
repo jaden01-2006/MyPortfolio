@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+:root {
+  /* Primary Theme Colors from Reference */
+  --portfolio-pink: #F06292;
+  --portfolio-pink-light: #FCE4EC;
+  --portfolio-pink-dark: #D81B60;
+  
+  /* Neutral Colors for Layout */
+  --portfolio-text: #333333;
+  --portfolio-text-muted: #666666;
+  --bg: #F9F9FB;
+  --border: #e5e4e7;
+
+  /* Typography Settings */
+  --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  
+  font-family: var(--sans);
+  font-size: 18px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color-scheme: light;
+  color: var(--portfolio-text);
+  background-color: var(--bg);
+  
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+/* Global Transitions and Reset */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Custom Selection Color (Pink) */
+::selection {
+  background-color: var(--portfolio-pink-light);
+  color: var(--portfolio-pink-dark);
+}
+
+h1, h2, h3 {
+  color: var(--portfolio-text);
+  font-weight: 700;
+  margin: 0;
+}
+
+.shadow-card {
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 10px 30px;
+}
+
+.decor-fade {
+  pointer-events: none;
+  user-select: none;
+}
