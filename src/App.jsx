@@ -1,22 +1,20 @@
 import React from 'react';
-// Layout Components - Ensure these folder names match your sidebar exactly
+// Layout Components
 import Header from './components/Layout/Header';
 import Footer from './components/Layout/Footer';
 import Button from './components/UI/Button';
 
-// Portfolio Sections - Ensure these folder names match your sidebar exactly
+// Portfolio Sections
 import About from './components/Portfolio/About';
 import Education from './components/Portfolio/Education';
 import Skills from './components/Portfolio/Skills';
-// Note: Check if your file is named 'Project.jsx' or 'Projects.jsx'
 import Projects from './components/Portfolio/Project'; 
-// Note: Check if your file is named 'Achievement.jsx' or 'Achievements.jsx'
 import Achievements from './components/Portfolio/Achievement';
 
 // Assets
 import heroImage from './assets/hero.png'; 
 
-// UI Components
+// Unified 'Let's Connect' section
 import Card from './components/UI/Card';
 
 const App = () => {
