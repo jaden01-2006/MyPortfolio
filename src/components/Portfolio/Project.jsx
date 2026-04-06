@@ -8,7 +8,7 @@ const Projects = () => {
       icon: '📝',
       tags: ['HTML', 'Express.js', 'Node.js','MongoDB', 'React.js'],
       desc: 'A full-featured CRUD system Notion style designed with MERN stack.',
-      link: 'https://your-todo-link.com'
+      link: 'https://awesometodos-v3-1.onrender.com'
     },
     { 
       title: 'Audio Media Player',
