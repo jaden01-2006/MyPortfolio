@@ -11,8 +11,6 @@
   --portfolio-text-muted: #666666;
   --bg: #F9F9FB;
   --border: #e5e4e7;
-
-  /* Typography Settings */
   --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   
   font-family: var(--sans);
@@ -62,4 +60,12 @@ h1, h2, h3 {
 .decor-fade {
   pointer-events: none;
   user-select: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+
+section {
+  scroll-margin-top: 100px; 
 }

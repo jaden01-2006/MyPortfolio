@@ -3,9 +3,8 @@ import Card from '../UI/Card';
 
 const Achievements = () => {
   const achievementItems = [
-    { icon: '🎉', text: 'Participated in Hackathon 2025' },
-    { icon: '📜', text: 'Completed Online Courses (Udemy / Coursera)' },
-    { icon: '🛠️', text: 'Built 5+ Personal Projects' }
+    { icon: '🎉', text: 'Participated in PRISAA' },
+    { icon: '🛠️', text: 'Built 3+ Personal Projects' }
   ];
 
   return (
