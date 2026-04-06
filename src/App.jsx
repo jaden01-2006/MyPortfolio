@@ -1,20 +1,18 @@
-import React from 'react';
-// Layout Components
+import React, { useState, useEffect } from 'react'; // Added hooks
 import Header from './components/Layout/Header';
 import Footer from './components/Layout/Footer';
 import Button from './components/UI/Button';
 import Card from './components/UI/Card';
-
-// Portfolio Sections
 import About from './components/Portfolio/About';
 import Education from './components/Portfolio/Education';
 import Skills from './components/Portfolio/Skills';
 import Projects from './components/Portfolio/Project'; 
 import Achievements from './components/Portfolio/Achievement';
+import LoadingScreen from './components/UI/LoadingScreen'; // Import your new Loader
 
 import heroImage from './assets/hero.jpg';
 
-// --- SIMPLE ICONS (COLORED VERSION PATHS) ---
+// Social Icons Components
 const SI_Linkedin = ({ className }) => (
   <svg role="img" viewBox="0 0 24 24" fill="#0A66C2" className={className}>
     <title>LinkedIn</title>
@@ -37,36 +35,51 @@ const SI_Facebook = ({ className }) => (
 );
 
 const App = () => {
+  // 1. Loading State
+  const [isLoading, setIsLoading] = useState(true);
+
+  // 2. Effect to handle loading time
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); // Adjust time (2000ms = 2 seconds) as needed
+    return () => clearTimeout(timer);
+  }, []);
+
   const contactLinks = [
-    { 
-      label: 'nenengjadencasiple01@gmail.com', 
-      icon: <SI_Email className="w-6 h-6" />, 
-      href: 'mailto:nenengjadencasiple01@gmail.com' 
+    {
+      label: 'nenengjadencasiple01@gmail.com',
+      icon: <SI_Email className="w-6 h-6" />,
+      href: 'mailto:nenengjadencasiple01@gmail.com'
     },
     { 
-      label: 'github.com/jaden01-2006', 
-      icon: <span className="text-2xl">🐙</span>, 
-      href: 'https://github.com/jaden01-2006' 
+      label: 'github.com/jaden01-2006',
+      icon: <span className="text-2xl">🐙</span>,
+      href: 'https://github.com/jaden01-2006'
     },
     { 
-      label: 'linkedin.com/in/jadencasiple', 
-      icon: <SI_Linkedin className="w-6 h-6" />, 
-      href: 'https://www.linkedin.com/in/jadencasiple/' 
+      label: 'linkedin.com/in/jadencasiple',
+      icon: <SI_Linkedin className="w-6 h-6" />,
+      href: 'https://www.linkedin.com/in/jadencasiple/'
     },
-    { 
-      label: 'facebook.com/jadencasiple', 
-      icon: <SI_Facebook className="w-6 h-6" />, 
-      href: 'https://www.facebook.com/profile.php?id=61584166781479' 
+    {
+      label: 'facebook.com/jadencasiple',
+      icon: <SI_Facebook className="w-6 h-6" />,
+      href: 'https://www.facebook.com/profile.php?id=61584166781479'
     }
   ];
 
+  // 3. Conditional Rendering: Show loader if isLoading is true
+  if (isLoading) {
+    return <LoadingScreen />;
+  }
+
   return (
-    // Added scroll-smooth for graceful navigation transitions
     <div className="bg-portfolio-bg text-portfolio-text min-h-screen font-sans selection:bg-portfolio-pink-light selection:text-portfolio-pink-dark scroll-smooth">
       <Header />
 
       <main className="container mx-auto py-12 px-0">
-        {/* Hero Section - Added id="home" */}
+        {/* Hero Section */}
         <section id="home" className="flex flex-col md:flex-row items-center justify-between gap-12 py-20 mb-12 max-w-[1400px] mx-auto px-10 scroll-mt-24">
           <div className="flex-1 text-center md:text-left">
             <h1 className="text-7xl font-extrabold text-portfolio-text m-0 mb-3 leading-tight">
@@ -96,8 +109,8 @@ const App = () => {
           <div className="relative">
             <div className="absolute -inset-4 bg-portfolio-pink/10 rounded-full blur-2xl decor-fade"></div>
             <img 
-              src={heroImage} 
-              alt="Jaden Casiple Portrait" 
+              src={heroImage}
+              alt="Jaden Casiple Portrait"
               className="relative w-80 h-80 md:w-96 md:h-96 rounded-full object-cover border-[10px] border-white shadow-xl z-10" 
             />
             <span className="absolute left-[-40px] top-5 text-4xl text-portfolio-pink opacity-50 z-20 decor-fade">♡</span>
@@ -105,31 +118,29 @@ const App = () => {
           </div>
         </section>
 
-        {/* About Section - Added wrapper with id="about" */}
+        {/* About Section */}
         <section id="about" className="max-w-[1400px] mx-auto px-10 mb-16 scroll-mt-24">
            <About />
         </section>
 
+        {/* Education & Skills */}
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 mb-16 px-10 items-stretch">
           <Education />
           <Skills />
         </div>
 
-        {/* Projects Section - Added wrapper with id="projects" */}
+        {/* Projects & Achievements */}
         <section id="projects" className="scroll-mt-24">
           <Projects />
         </section>
-
-        {/* Achievements Section - Added wrapper with id="achievements" */}
         <section id="achievements" className="scroll-mt-24">
           <Achievements />
         </section>
 
-        {/* Contact Section - id="contact" was already here */}
+        {/* Contact Section */}
         <section id="contact" className="max-w-[1400px] mx-auto px-10 mb-20 scroll-mt-24">
           <Card className='bg-[#fff5f5] shadow-sm border-none rounded-[40px] p-12 mt-0'>
             <div className="flex flex-col md:flex-row items-center justify-between gap-10">
-              
               <div className="flex flex-col items-center md:items-start text-center md:text-left">
                 <div className="mb-6">
                   <span className="text-8xl md:text-7xl opacity-90">✉️</span>
@@ -162,7 +173,6 @@ const App = () => {
                   </a>
                 ))}
               </div>
-
             </div>
           </Card>
         </section>

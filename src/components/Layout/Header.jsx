@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; // Added useState for mobile toggle
+import React, { useState } from 'react';
 import Button from '../UI/Button';
 
 const Header = () => {
@@ -11,8 +11,6 @@ const Header = () => {
     { name: 'Achievements & Activities', href: '#achievements' },
     { name: 'Contact', href: '#contact' },
   ];
-
-  // Helper to close menu when a link is clicked
   const closeMenu = () => setIsMenuOpen(false);
 
   return (
@@ -25,8 +23,6 @@ const Header = () => {
             Jaden Casiple <span className='text-xs font-serif'>♡</span>
           </a>
         </div>
-
-        {/* Desktop Navigation - Hidden on Mobile (hidden md:flex) */}
         <nav className="hidden md:flex flex-1 justify-center">
           <ul className="flex gap-8 p-0 m-0 list-none">
             {navLinks.map((link) => (
@@ -41,8 +37,6 @@ const Header = () => {
             ))}
           </ul>
         </nav>
-
-        {/* Desktop Button - Hidden on Mobile */}
         <div className="hidden md:block flex-shrink-0">
           <a href="#contact" className="hover:no-underline">
             <Button 
@@ -53,7 +47,6 @@ const Header = () => {
           </a>
         </div>
 
-        {/* Mobile Menu Toggle Button - Visible only on Mobile (block md:hidden) */}
         <div className="md:hidden flex items-center">
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -68,8 +61,6 @@ const Header = () => {
           </button>
         </div>
       </div>
-
-      {/* Mobile Menu Dropdown */}
       {isMenuOpen && (
         <div className="md:hidden bg-white border-t border-gray-100 absolute w-full left-0 shadow-lg animate-in slide-in-from-top duration-300">
           <nav className="flex flex-col p-6 gap-4">
